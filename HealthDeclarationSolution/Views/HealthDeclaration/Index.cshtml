@@ -1,0 +1,52 @@
+﻿@using HealthDeclarationSolution.Models
+@model IEnumerable<HealthDeclarationViewModel>
+@{
+}
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-primary">Health Declaration List</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="HealthDeclaration" asp-action="Create" class="btn btn-primary">
+                Create new Health Declaration
+            </a>
+        </div>
+    </div>
+</div>
+<br />
+<table class="table table-bordered table-striped" style="width:100%">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Business Email</th>
+            <th>Company Name</th>
+            <th>Designation</th>
+            <th>Business Number</th>
+        <tr>
+    </thead>
+
+    <tbody>
+        @foreach (var obj in Model)
+        {
+            <tr>
+                <td>
+                    @obj.Name
+                </td>
+                <td>
+                    @obj.BusinessEmail
+                </td>
+                <td>
+                    @obj.CompanyName
+                </td>
+                 <td>
+                    @obj.Designation
+                </td>
+                <td>
+                    @obj.BusinessNumber
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

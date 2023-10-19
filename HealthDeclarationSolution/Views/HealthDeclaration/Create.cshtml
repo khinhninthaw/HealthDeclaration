@@ -1,0 +1,89 @@
+﻿@using HealthDeclarationSolution.Models
+@model HealthDeclarationViewModel
+@{
+}
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Create Health Declaration</h2>
+            <hr />
+        </div>
+        <div class="col-sm-10">
+            <div class="row">
+               <div class="col-md-6">
+                    <label asp-for="Name">* Name</label>
+                    <input asp-for="Name" class="form-control" required />
+               </div>
+               <div class="col-md-6">
+                    <label asp-for="BusinessEmail">* Business Email</label><br />
+                    <input type="email" asp-for="BusinessEmail" class="form-control" aria-describedby="emailHelp" required />
+               </div>
+            </div>
+         </div>
+         <p></p>
+        <div class="col-sm-10">
+            <div class="row">
+                <div class="col-md-6">
+                    <label asp-for="CompanyName">* Company Name</label>
+                    <input asp-for="CompanyName" class="form-control" required />
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="Designation">Designation</label>
+                    <input asp-for="Designation" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <p></p>
+        <div class="col-sm-10">
+            <div class="row">
+                <div class="col-md-6">
+                    <label asp-for="BusinessNumber">* Business Number</label>
+                    <input asp-for="BusinessNumber" class="form-control" required />
+                </div>
+                <div class="col-md-6">
+                    <label asp-for="LicensePlate">License Plate</label>
+                    <input asp-for="LicensePlate" class="form-control" />
+                </div>
+            </div>
+        </div>
+        <p></p>
+        <p></p>
+
+        <div class="mb-3">
+            <label asp-for="NRIC">NRIC/FIN Number(Last 4 Characters)*</label>
+            <input asp-for="NRIC" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="IsStayHome">1. Are you currently under a Quarantine Order, Stay-Home Notice?</label>
+            <br />
+            <input type="radio" name="IsStayHome" value="Yes"/> Yes
+            <input type="radio" name="IsStayHome" value="No"/> No
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="IsContact">2. Have you had close contact with a confirmed COVID-19 case in the past 14 days?</label>
+            <br />
+            <input type="radio" name="IsContact" value="Yes" /> Yes
+            <input type="radio" name="IsContact" value="No" /> No
+        </div>
+
+        <div class="mb-3">
+            <label asp-for="IsFever">1. Do you have any fever or flu-like symptoms?</label>
+            <br />
+            <input type="radio" name="IsFever" value="Yes" /> Yes
+            <input type="radio" name="IsFever" value="No" /> No
+        </div>
+
+        <div class="mb-3">
+            <input type="checkbox" name="TermAndCondition" required/>
+            <span>By Completing this online form, I acknowledge and consent to the collectin, use and disclosure of my personal</span>
+            <span>data for security verification, access control and safety purposes</span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create</button>
+    </div>
+    <p></p>
+    <a asp-controller="HealthDeclaration" asp-action="Index" class="btn btn-secondary">Back to List</a>
+</form>
+
